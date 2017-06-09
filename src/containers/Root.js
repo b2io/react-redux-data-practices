@@ -1,14 +1,17 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import todoApp from './reducers'
-import App from './components/App'
+import React, { PropTypes } from 'react';
+import { Provider } from 'react-redux';
+import App from '../components/App';
 
-function Root() {
+function Root({ store }) {
   return (
     <Provider store={store}>
       <App />
     </Provider>
   );
 }
+
+Root.propTypes = {
+  store: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+};
+
+export default Root;
