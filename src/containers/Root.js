@@ -1,7 +1,14 @@
-import React, { PropTypes } from 'react';
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import todoApp from './reducers'
+import App from './components/App'
 
 function Root() {
   return (
-    <h1>Root</h1>
+    <Provider store={store}>
+      <App />
+    </Provider>
   );
 }

@@ -2,7 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './containers/Root';
 import registerServiceWorker from './registerServiceWorker';
+
+import createStore from './store';
+
 import './index.css';
 
-ReactDOM.render(<Root />, document.getElementById('root'));
+const store = createStore();
+
+ReactDOM.render(
+  <Root store={store} />,
+  document.getElementById('root')
+);
 registerServiceWorker();
